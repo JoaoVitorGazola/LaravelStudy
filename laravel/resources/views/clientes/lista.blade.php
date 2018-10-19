@@ -1,3 +1,4 @@
+@auth
 @extends('layouts.app')
 
 @section('content')
@@ -9,11 +10,29 @@
                     <a class="float-right" href="{{url('clientes/novo')}}">Novo Cliente</a>
                     </div>
                     <div class="card-body">
-                        Listagem de clientes
-
+                        <table class="table">
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th>Numero</th>
+                            <th>Ação</th>
+                            <tbody>
+                            @foreach($clientes as $cliente)
+                            <tr>
+                                <td>{{$cliente->nome}}</td>
+                                <td>{{$cliente->endereco}}</td>
+                                <td>{{$cliente->numero}}</td>
+                                <td>
+                                    <button class="btn btn-sm"><a href="clientes/{{$cliente->id}}/editar" >Editar</a></button>
+                                    <button class="btn btn-sm"><a href="clientes/{{$cliente->id}}/excluir" >Excluir</a></button>
+                                </td>
+                            </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+@endauth

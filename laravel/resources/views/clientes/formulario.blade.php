@@ -1,3 +1,4 @@
+@auth
 @extends('layouts.app')
 
 @section('content')
@@ -12,13 +13,19 @@
                         @if(Session::has('mensagem_sucesso'))
                             <div class="alert alert-success">{{Session::get('mensagem_sucesso')}}</div>
                         @endif
-                        {!! Form::open(['url'=>'clientes/salvar']) !!}
+                        @if(Request::is('*/editar'))
+                           {!! Form::model($cliente, ['method'=>'PATCH', 'url'=>'clientes/'.$cliente->id]) !!}
+                            @else
+                                {!! Form::open(['url'=>'clientes/salvar']) !!}
+                            @endif
+
+
                         {!! Form::label('nome', 'Nome') !!}
-                        {!! Form::input('text','nome', '', ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}
+                        {!! Form::input('text','nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}
                         {!! Form::label('endereco', 'Endereço') !!}
-                        {!! Form::input('text','endereco', '', ['class'=>'form-control', 'placeholder'=>'Endereço']) !!}
+                        {!! Form::input('text','endereco', null, ['class'=>'form-control', 'placeholder'=>'Endereço']) !!}
                         {!! Form::label('numero', 'Numero') !!}
-                        {!! Form::input('text','numero', '', ['class'=>'form-control', 'placeholder'=>'Numero']) !!}
+                        {!! Form::input('text','numero', null, ['class'=>'form-control', 'placeholder'=>'Numero']) !!}
                         {!! Form::submit('Salvar', ['class'=>'btn btn-primary']) !!}
                         {!! Form::close() !!}
                     </div>
@@ -27,3 +34,4 @@
         </div>
     </div>
 @endsection
+@endauth
