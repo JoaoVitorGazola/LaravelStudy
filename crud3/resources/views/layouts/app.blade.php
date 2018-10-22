@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="navbar-brand mr-auto"><a href="{{url('/clientes')}}">Clientes</a> </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
