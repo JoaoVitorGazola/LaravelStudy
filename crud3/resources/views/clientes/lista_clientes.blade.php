@@ -15,6 +15,24 @@
                                 {{ session('mensagem_sucesso') }}
                             </div>
                         @endif
+                        <table class="table">
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th>Numero</th>
+                            <th>Ações</th>
+                            <tbody>
+                            @foreach($clientes as $cliente)
+                                <tr>
+                                    <td>{{$cliente->nome}}</td>
+                                    <td>{{$cliente->endereco}}</td>
+                                    <td>{{$cliente->numero}}</td>
+                                    <td>
+                                        <button class="btn btn-sm float-left"><a href="('cliente/'{{$cliente->id}}'/editar')">Editar</a> </button>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
