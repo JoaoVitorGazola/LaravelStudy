@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     public function index(){
-        return view('clientes.listagem');
+        $clientes = Cliente::get();
+        return view('clientes.listagem', ['clientes'=>$clientes]);
     }
     public function novo(){
 
@@ -29,5 +30,11 @@ class ClienteController extends Controller
         $cliente->update($request->all());
         \Session::flash('mensagem_sucesso', 'Cliente atualizado com sucesso!');
         return \Redirect::to('clientes/'.$cliente->id.'/editar');
+    }
+    public function delete($id){
+        $cliente = Cliente::findOrFail($id);
+        $cliente->delete();
+        \Session::flash('mensagem_sucesso', 'Cliente deletado com sucesso!');
+        return \Redirect::to('clientes');
     }
 }

@@ -23,4 +23,5 @@ Route::get('/clientes/novo', 'ClienteController@novo');
 Route::post('/clientes/salvar', 'ClienteController@salvar');
 Route::get('/clientes/{cliente}/editar', 'ClienteController@editar');
 Route::patch('/clientes/{cliente}', 'ClienteController@atualizar');
+Route::delete('/clientes/{cliente}', 'ClienteController@delete');
 
