@@ -26,7 +26,7 @@
                                     <td>{{$cliente->numero}}</td>
                                    <td><button class="btn btn-sm float-left"><a href="clientes/{{$cliente->id}}/editar">Editar</a> </button>
                                    {{Form::open(['method'=> 'DELETE', 'url'=>'clientes/'.$cliente->id])}}
-                                       <button type="submit" class="btn btn-sm float-right">Excluir</button>
+                                       <button type="submit" class="btn btn-sm float-right" style="color: red">Excluir</button>
                                        {{Form::close()}}
                                    </td>
 
