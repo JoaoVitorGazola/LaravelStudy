@@ -27,7 +27,7 @@
                                     <td>{{$cliente->endereco}}</td>
                                     <td>{{$cliente->numero}}</td>
                                     <td>
-                                        <button class="btn btn-sm float-left"><a href="('cliente/'{{$cliente->id}}'/editar')">Editar</a> </button>
+                                        <button class="btn btn-sm float-left"><a href="clientes/{{$cliente->id}}/editar">Editar</a> </button>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -21,4 +21,14 @@ class ClientesController extends Controller
         return \Redirect::to('clientes/novo');
 
     }
+    public function editar($id){
+        $cliente = Cliente::findOrFail($id);
+        return view('clientes.formulario', ['cliente'=>$cliente]);
+    }
+    public function atualizar(Request $request, $id){
+        $cliente = Cliente::findOrFail($id);
+        $cliente->update($request->all());
+        \Session::flash('mensagem_sucesso', 'Cliente atualizado com sucesso!');
+        return \Redirect::to('clientes');
+    }
 }

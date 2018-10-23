@@ -15,8 +15,8 @@
                                 {{ session('mensagem_sucesso') }}
                             </div>
                         @endif
-                        @if(Request::has('*/editar'))
-                                {!! Form::model($clientes, ['method'=>'PATCH', 'url'=>'clientes/'.$clientes->id]) !!}
+                        @if(Request::is('*/editar'))
+                                {!! Form::model($cliente, ['method'=>'PATCH', 'url'=>'clientes/'.$cliente->id]) !!}
                             @else
                                 {!! Form::open(['url'=>'clientes/salvar']) !!}
                             @endif
