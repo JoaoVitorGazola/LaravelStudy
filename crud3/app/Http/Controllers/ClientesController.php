@@ -31,4 +31,10 @@ class ClientesController extends Controller
         \Session::flash('mensagem_sucesso', 'Cliente atualizado com sucesso!');
         return \Redirect::to('clientes');
     }
+    public function deletar($id){
+        $cliente = Cliente::findOrFail($id);
+        $cliente->delete();
+        \Session::flash('mensagem_sucesso', 'Cliente atualizado com sucesso!');
+        return \Redirect::to('clientes');
+    }
 }

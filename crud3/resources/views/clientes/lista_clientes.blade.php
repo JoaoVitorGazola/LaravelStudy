@@ -28,6 +28,9 @@
                                     <td>{{$cliente->numero}}</td>
                                     <td>
                                         <button class="btn btn-sm float-left"><a href="clientes/{{$cliente->id}}/editar">Editar</a> </button>
+                                        {!! Form::open(['method'=>'DELETE', 'url'=>'clientes/'.$cliente->id]) !!}
+                                        {!! Form::submit('Excluir', ['class'=>'btn btn-sm float-right']) !!}
+                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                                 @endforeach
