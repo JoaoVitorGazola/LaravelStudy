@@ -63,6 +63,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        \Session::flash('status', 'Verifique seu e-mail para confirma-lo');
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

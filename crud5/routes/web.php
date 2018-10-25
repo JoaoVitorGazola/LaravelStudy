@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/clientes', 'ClienteController@index')->middleware('verified');
+Route::get('/clientes/novo', 'ClienteController@novo')->middleware('verified');
+Route::get('/clientes/{cliente}/editar', 'ClienteController@editar')->middleware('verified');
+Route::post('/clientes/novo/salvar', 'ClienteController@salvar')->middleware('verified');
+Route::patch('/clientes/editar/{cliente}', 'ClienteController@atualizar')->middleware('verified');
+Route::delete('/clientes/deletar/{cliente}', 'ClienteController@deletar')->middleware('verified');
