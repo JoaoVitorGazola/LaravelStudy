@@ -15,7 +15,7 @@
                                 {{ Session('mensagem_sucesso') }}
                             </div>
                         @endif
-                            <table class="table">
+                            <table class="table table-responsive-lg">
                                 <th>Nome</th>
                                 <th>Endereço</th>
                                 <th>Numero</th>
@@ -26,7 +26,7 @@
                                     <td>{{$cliente->endereco}}</td>
                                     <td>{{$cliente->numero}}</td>
                                     <td>
-                                        <button class="btn btn-sm float-left"><a href="{{url('clientes/'.$cliente->id.'/editar')}}">Editar</a></button>
+                                        <button class="btn btn-sm float-left res"><a href="{{url('clientes/'.$cliente->id.'/editar')}}">Editar</a></button>
                                         {!! Form::open(['url'=>'clientes/deletar/'.$cliente->id,'method'=>'DELETE']) !!}
                                         {!! Form::submit('Excluir', ['class'=>'btn btn-sm float-right']) !!}
                                         {!! Form::close() !!}
