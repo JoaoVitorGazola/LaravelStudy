@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">Insira informações do cliente</div>
@@ -26,8 +26,10 @@
                         {!! Form::input('text', 'endereco', null, ['class'=>'form-control', 'placeholder'=>'Endereço']) !!}
                         {!! Form::label('numero', 'Numero') !!}
                         {!! Form::input('text', 'numero', null, ['class'=>'form-control', 'placeholder'=>'Numero']) !!}
+                        {!! Form::label('cpf', 'CPF do cliente') !!}
+                        {!! Form::input('text', 'cpf', null, ['class'=>'form-control', 'placeholder'=>'000.000.000-00']) !!}
                         {!! Form::submit('Salvar', ['class'=>'btn btn-primary']) !!}
-                        {!! Form::close() !!}
+                            {!! Form::close() !!}
                     </div>
                 </div>
             </div>

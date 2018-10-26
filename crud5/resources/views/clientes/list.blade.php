@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
                     <div class="float-left">Lista de clientes</div>
@@ -19,16 +19,19 @@
                                 <th>Nome</th>
                                 <th>Endereço</th>
                                 <th>Numero</th>
+                                <th>CPF</th>
                                 <th>Ação</th>
                                 @foreach($clientes as $cliente)
                                 <tr>
                                     <td>{{$cliente->nome}}</td>
                                     <td>{{$cliente->endereco}}</td>
                                     <td>{{$cliente->numero}}</td>
+                                    <td>{{$cliente->cpf}}</td>
                                     <td>
-                                        <button class="btn btn-sm float-left res"><a href="{{url('clientes/'.$cliente->id.'/editar')}}">Editar</a></button>
+                                        <button class="btn btn-sm res m-1"><a href="{{url('compras/'.$cliente->id.'/registrar')}}">Registrar compra</a></button>
+                                        <button class="btn btn-sm res m-1"><a href="{{url('clientes/'.$cliente->id.'/editar')}}">Editar</a></button>
                                         {!! Form::open(['url'=>'clientes/deletar/'.$cliente->id,'method'=>'DELETE']) !!}
-                                        {!! Form::submit('Excluir', ['class'=>'btn btn-sm float-right']) !!}
+                                        {!! Form::submit('Excluir', ['class'=>'btn btn-sm m-1', 'style'=>'color : red']) !!}
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>

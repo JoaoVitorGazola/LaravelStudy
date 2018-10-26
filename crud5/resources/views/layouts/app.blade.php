@@ -29,6 +29,7 @@
                 @if(!Auth::guest())
                 <a class="navbar-brand btn btn-sm" href="{{url('/home')}}">Home</a>
                 <a class="navbar-brand btn btn-sm" href="{{url('/clientes')}}">Clientes</a>
+                <a class="navbar-brand btn btn-sm" href="{{url('/compras')}}">Compras</a>
                 @endif
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

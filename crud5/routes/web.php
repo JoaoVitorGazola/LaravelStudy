@@ -24,3 +24,8 @@ Route::get('/clientes/{cliente}/editar', 'ClienteController@editar')->middleware
 Route::post('/clientes/novo/salvar', 'ClienteController@salvar')->middleware('verified');
 Route::patch('/clientes/editar/{cliente}', 'ClienteController@atualizar')->middleware('verified');
 Route::delete('/clientes/deletar/{cliente}', 'ClienteController@deletar')->middleware('verified');
+
+Route::get('/compras', 'ComprasController@index')->middleware('verified');
+Route::get('/compras/{cliente}/registrar', 'ComprasController@registrar')->middleware('verified');;
+Route::post('/compras/salvar', 'ComprasController@salvar')->middleware('verified');
+Route::delete('/compras/deletar/{compra}', 'ComprasController@deletar')->middleware('verified');
