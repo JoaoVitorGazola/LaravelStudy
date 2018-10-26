@@ -29,11 +29,28 @@
                                     <td>{{$compra->valorItem}}</td>
                                     <td>{{$compra->nomeItem}}</td>
                                     <td>
-                                        {!! Form::open(['url'=>'compras/deletar/'.$compra->id,'method'=>'DELETE']) !!}
-                                        {!! Form::submit('Excluir', ['class'=>'btn btn-sm m-1', 'style'=>'color : red']) !!}
-                                        {!! Form::close() !!}
+                                        <button class="btn btn-sm res m-1"><a style="color: red" data-toggle="modal" data-target="#confirmarExcluir" href="#">Excluir</a></button>
                                     </td>
                                 </tr>
+                                    <div class="modal fade" id="confirmarExcluir" tabindex="-1" role="alert">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content" style="background-color: lightgray">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: #333333; color: red">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h2>
+                                                        Tem certeza que deseja excluir essa compra?
+                                                    </h2>
+                                                    <div class="modal-footer">
+                                                        <a type="button" class="btn btn-sm m-2" style="text-decoration: -webkit-link; color: blue" data-dismiss="modal">Não excluir</a>
+                                                        <a type="button" class="btn btn-sm m-2" style="text-decoration: -webkit-link; color: red"  href="{{url('compras/deletar/'.$compra->id)}}">Excluir</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                             @endforeach
                         </table>
 
@@ -41,5 +58,7 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 @endsection
