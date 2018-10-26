@@ -15,6 +15,9 @@
                                 {{ Session('mensagem_sucesso') }}
                             </div>
                         @endif
+                            @if($compras->isEmpty())
+                                <h2>Sem compras registradas</h2>
+                            @else
                         <table class="table table-responsive-lg">
                             <th>Nome do cliente</th>
                             <th>Valor da compra</th>
@@ -52,6 +55,7 @@
                                     </div>
 
                             @endforeach
+                            @endif
                         </table>
 
                     </div>

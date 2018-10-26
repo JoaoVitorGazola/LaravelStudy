@@ -15,6 +15,9 @@
                                 {{ Session('mensagem_sucesso') }}
                             </div>
                         @endif
+                            @if($clientes->isEmpty())
+                                <h2>Sem clientes cadastrados</h2>
+                            @else
                             <table class="table table-responsive-lg">
                                 <th>Nome</th>
                                 <th>Endereço</th>
@@ -58,7 +61,7 @@
 
                                 @endforeach
                             </table>
-
+@endif
                     </div>
                 </div>
             </div>
